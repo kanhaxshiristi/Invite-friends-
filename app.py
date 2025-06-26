@@ -68,7 +68,7 @@ async def get_jwt_async(uid, password):
     try:
         async with httpx.AsyncClient() as client:
             response = await client.get(
-                f"https://jwt-aditya.vercel.app/token?uid={uid}&password={password}",
+                f"https://dev-jwt-api-ff.vercel.app/v1/auth/{uid}:{password}/DEVxAPI",
                 timeout=30
             )
             if response.status_code == 200:
